@@ -1,0 +1,4 @@
+{
+  "_comment": "This file contains the list of layers used in the lambda with the specific version",
+  "pg": "8.5.1"
+}

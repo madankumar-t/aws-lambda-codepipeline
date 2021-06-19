@@ -1,0 +1,7 @@
+{
+  "_comment": "This file contains the list of layers used in the lambda with the specific version",
+  "pg": "8.5.1",
+  "file-type": "16.3.0",
+  "loadsh": "4.17.21",
+  "xlsx": "0.16.9"
+}
