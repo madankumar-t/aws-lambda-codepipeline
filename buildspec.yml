@@ -23,3 +23,8 @@ phases:
             # - aws cloudformation create-change-set --template-url https://$S3_BUCKET.s3.amazonaws.com/$STAGE_NAME/config/sam-output.yaml --parameters file://cfn-config.json --role-arn arn:aws:iam::$AWS_ACCOUNT_NUMBER:role/$CFN_ROLE --change-set-name tailor-$STAGE_NAME-ChangeSet --stack-name tailor-$STAGE_NAME --capabilities CAPABILITY_IAM
             
               - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir ; zip -r ../"$dir"_package.zip *); fi; done
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'aws-lambda-codepipeline'
+  discard-paths: no
