@@ -24,6 +24,6 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - 'lambdafunctions/*.zip'
   base-directory: 'lambdafunctions'
-  discard-paths: yes
+  discard-paths: no
