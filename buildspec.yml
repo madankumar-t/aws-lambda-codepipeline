@@ -19,6 +19,6 @@ phases:
             - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
     build:
         commands:
-            
-              - for dir in lambdafunctions/*; do echo "this is *****>>>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd lambdafunctions ; zip -r ../"$dir"_package.zip *); fi; done
+              - cd lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir"_package.zip *); fi; done
+              #- for dir in lambdafunctions/*; do echo "this is *****>>>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd lambdafunctions ; zip -r ../"$dir"_package.zip *); fi; done
 
