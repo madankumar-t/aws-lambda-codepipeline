@@ -26,5 +26,5 @@ artifacts:
   files:
     - '**/*'
   base-directory: 'lambdafunctions'
-  discard-paths: yes
+  discard-paths: no
   type: zip
