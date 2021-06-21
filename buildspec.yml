@@ -16,7 +16,7 @@ phases:
         commands:
             # Loop through directory structure and pip install all function libraries
             # as specified in their respective requirements.txt
-            - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/vendored/ -r "$dir"/requirements.txt); fi; done
+            - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
     build:
         commands:
             
