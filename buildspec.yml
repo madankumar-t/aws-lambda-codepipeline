@@ -24,3 +24,8 @@ phases:
             
               - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir ; zip -r ../"$dir"_package.zip *); fi; done
             
+    artifacts:
+       files:
+            - '**/*'
+            base-directory: 'aws-lambda-codepipeline'
+            discard-paths: no
