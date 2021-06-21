@@ -26,6 +26,6 @@ phases:
             
     artifacts:
        files:
-            - '**/*'
-            base-directory: 'aws-lambda-codepipeline'
-            discard-paths: no
+         - '**/*'
+       base-directory: 'aws-lambda-codepipeline'
+       discard-paths: no
