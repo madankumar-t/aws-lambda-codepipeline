@@ -25,7 +25,8 @@ phases:
              - mkdir build-output
              - find . -type d -name lambdafunctions -exec cp -R {} build-output \;
              - cd build-output/lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir"_package.zip *); fi; done
-             #- find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
+             # - find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
+             # testing
 
 artifacts:
   files:
