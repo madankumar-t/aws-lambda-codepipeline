@@ -30,6 +30,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'build-output'
+  base-directory: 'build-output/lambdafunctions'
   discard-paths: no
   type: zip
