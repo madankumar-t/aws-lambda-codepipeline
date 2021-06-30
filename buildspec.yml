@@ -32,5 +32,10 @@ artifacts:
   files:
     - '**/*'
   base-directory: 'build-output/lambdafunctions'
-  discard-paths: no
+  discard-paths: yes
+  secondary-artifacts:
+    artifact1:
+      files:
+        - build-output/lambdafunctions/github-to-lambda-demo-main_package.zip
+      discard-paths: yes
   type: zip
