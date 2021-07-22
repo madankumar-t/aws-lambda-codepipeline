@@ -35,11 +35,11 @@ phases:
 artifacts:
   files:
     
-     - lambdafunctions/generate-presigned-S3url.zip
-     - lambdafunctions/get-import-process-status.zip
-     - lambdafunctions/github-to-lambda-demo-main.zip
-     - lambdafunctions/register-exposure-upload.zip
-     - lambdafunctions/save-exposure-subset.zip
-     - lambdafunctions/save-user-settings.zip
+     - generate-presigned-S3url.zip
+     - get-import-process-status.zip
+     - github-to-lambda-demo-main.zip
+     - register-exposure-upload.zip
+     - save-exposure-subset.zip
+     - save-user-settings.zip
   base-directory: 'lambdafunctions'
   discard-paths: yes
