@@ -19,17 +19,18 @@ phases:
             #- for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
             - cd lambdafunctions; for function_name in */; do zip -r "${function_name%/}.zip" "$function_name"; done
             - echo " displaying directories "
+            - pwd
             - ls -1
     build:
         commands:
               #- cd lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir"_package.zip *); fi; done
               #- for dir in lambdafunctions/*; do echo "this is *****>>>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd lambdafunctions ; zip -r ../"$dir"_package.zip *); fi; done
               
-             - mkdir build-output
-             - find . -type d -name lambdafunctions -exec cp -R {} build-output \;
-             - cd build-output/lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir".zip *); fi; done
+             #- mkdir build-output
+             #- find . -type d -name lambdafunctions -exec cp -R {} build-output \;
+             # - cd build-output/lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir".zip *); fi; done
              # - find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
-             # testing
+             - echo " testing zipping files "
 
 artifacts:
   files:
