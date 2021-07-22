@@ -16,7 +16,10 @@ phases:
         commands:
             # Loop through directory structure and pip install all function libraries
             # as specified in their respective requirements.txt
-            - for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
+            #- for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
+            - for function_name in lambdafunctions*/; do zip -r "${function_name%/}.zip" "$function_name"; done
+            - echo " displaying directories "
+            - ls -1
     build:
         commands:
               #- cd lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir"_package.zip *); fi; done
