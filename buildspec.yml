@@ -7,17 +7,17 @@ phases:
             # Purely informational
             - aws --version
             # Upgrade pip
-            - pip install --upgrade pip
+            #- pip install --upgrade pip
             # Upgrade to the latest version of awscli because the one bundled with
             # the CodeBuild image has a bug that prevents SAM templates from
             # packaging correctly.
-            - pip install --upgrade awscli
+            #- pip install --upgrade awscli
     pre_build:
         commands:
             # Loop through directory structure and pip install all function libraries
             # as specified in their respective requirements.txt
             #- for dir in lambdafunctions/*; do echo "$dir"; if [ -f "$dir"/requirements.txt ]; then (pip install -t "$dir"/requirements.txt); fi; done
-            - for function_name in lambdafunctions*/; do zip -r "${function_name%/}.zip" "$function_name"; done
+            - cd lambdafunctions; for function_name in */; do zip -r "${function_name%/}.zip" "$function_name"; done
             - echo " displaying directories "
             - ls -1
     build:
