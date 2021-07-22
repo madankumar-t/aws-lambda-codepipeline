@@ -24,7 +24,7 @@ phases:
               
              - mkdir build-output
              - find . -type d -name lambdafunctions -exec cp -R {} build-output \;
-             - cd build-output/lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir"_package.zip *); fi; done
+             - cd build-output/lambdafunctions; for dir in *; do echo "this is *****>> $dir"; if [ -f "$dir"/requirements.txt ]; then (cd $dir; zip -r ../"$dir".zip *); fi; done
              # - find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
              # testing
 
@@ -36,5 +36,5 @@ artifacts:
   secondary-artifacts:
     artifact1:
       files:
-        - build-output/lambdafunctions/github-to-lambda-demo-main_package.zip
+        - build-output/lambdafunctions/github-to-lambda-demo-main.zip
       discard-paths: no
